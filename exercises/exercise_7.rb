@@ -10,3 +10,11 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+begin
+    p "enter a store name please"
+    @store_name = gets.chomp
+    @new_store = Store.create(name: @store_name, annual_revenue: 50)
+    @new_store.save!
+  rescue Exception => error
+    puts error.message
+  end
